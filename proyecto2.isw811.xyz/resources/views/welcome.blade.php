@@ -5,7 +5,7 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <head>
-    <title>Registration Page</title>
+    <title>Main Page</title>
 	<link rel="stylesheet" type="text/css" href="assets/main.css">
 </head>
 <body>
@@ -66,9 +66,8 @@
                         @endif
                     @endauth
                 </div>
-            @endif
+        @endif
       </ul>
-      
     </div>
   </nav>
 
