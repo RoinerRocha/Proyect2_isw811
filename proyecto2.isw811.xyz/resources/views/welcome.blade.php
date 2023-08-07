@@ -17,7 +17,7 @@
           <a class="nav-link navlogo text-center" href="index.php">
             <img src="assets/images/logo.png">
           </a>
-
+          @auth
           <li class="nav-item dropdown_list">
             <a href="#" class="nav-link dropdown_link">
               <span class="textside">Publicaciones Instantáneas</span>
@@ -80,15 +80,40 @@
                   </ul>
               </div>
           </li>
+          @else
+          <li class="nav-item dropdown_list">
+            <a href="#" class="nav-link dropdown_link">
+              <span class="textside">Publicaciones Instantáneas</span>
+              <img src="./assets/down.svg" class="dropdown_arrow">
+              <input type="checkbox" class="dropdown_check">
+            </a>
+          </li>
 
-          
+          <li class="nav-item dropdown_list">
+            <a href="#" class="nav-link dropdown_link">
+              <span class="textside">Publicaciones En Cola</span>
+              <img src="./assets/down.svg" class="dropdown_arrow">
+              <input type="checkbox" class="dropdown_check">
+            </a>
+          </li>
+
+          <li class="nav-item dropdown_list">
+            <a href="#" class="nav-link dropdown_link">
+              <span class="textside">Publicaciones Programadas</span>
+              <img src="./assets/down.svg" class="dropdown_arrow">
+              <input type="checkbox" class="dropdown_check">
+            </a>
+          </li>
+          @endauth
       </ul>
       
+      
       <ul class="navbar-nav2 ml-auto">
-          <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+          <div>
             @auth
-              <span class="text-xs font-bold uppercase">Bienvenido, {{ auth()->user()->name }}!</span>
-              <form method="POST" action="/logout" class="text-xs font-semibold text-blue-500 ml-6">
+              <span class="text-name">Bienvenido, {{ auth()->user()->name }}!</span>
+              
+              <form method="POST" action="/logout" class="text-xs font-semibold text-blue-500 ml-6 logout">
                 @csrf
                   <button type="submit">Log Out</button>
               </form>

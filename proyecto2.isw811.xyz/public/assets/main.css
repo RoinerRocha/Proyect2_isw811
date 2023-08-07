@@ -276,6 +276,25 @@ html {
     color: #b6babe;
     text-decoration: none;
   }
+  .text-name{
+    color: black;
+    display: flex;
+    position: absolute;
+    margin-left: 900px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+  }
+  .logout
+  {
+    color: black;
+    display: flex;
+    position: relative;
+    margin-left: 1750px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
   
   
   @media (min-width: 992px) {
@@ -380,13 +399,9 @@ html {
   }
   
   .navbar-nav2 {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
     padding-left: 0;
     margin-bottom: 0;
     list-style: none;
