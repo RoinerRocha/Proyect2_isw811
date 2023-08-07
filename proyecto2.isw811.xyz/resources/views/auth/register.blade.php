@@ -2,6 +2,7 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+
 <!DOCTYPE html>
 <html>
     
@@ -26,18 +27,30 @@
                             <div class="row register-form">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input class="form-control" for="name" type="text" name="name" id="name" placeholder="Name *" required />
+                                        <input class="form-control" for="name" type="text" name="name" id="name" value="{{ old('name') }}" placeholder="Name *" required />
+                                        @error('name')
+                                            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control" for="username" type="text" name="username" id="username" placeholder="Username *" required />
+                                        <input class="form-control" for="username" type="text" name="username" id="username" value="{{ old('username') }}" placeholder="Username *" required />
+                                        @error('username')
+                                            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                                        @enderror
                                     </div>
                                     <div class="form-group">
                                         <input class="form-control" for="password" type="password" name="password" id="password" placeholder="Password *" required />
+                                        @error('password')
+                                            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input  class="form-control" for="email" type="email" name="email" id="email" placeholder="Your Email *" required />
+                                        <input  class="form-control" for="email" type="email" name="email" id="email" value="{{ old('email') }}" placeholder="Your Email *" required />
+                                        @error('email')
+                                            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                                        @enderror
                                     </div>
                                     <button type="submit" class="btnRegister"  value="Register">Register</button>
                                 </div>

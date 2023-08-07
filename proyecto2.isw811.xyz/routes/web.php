@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SessionsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
-Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
+// Route::get('welcome', [App\Http\Controllers\HomeController::class, 'index'])->name('welcome');
+
+Route::get('register', [RegisterController::class, 'create'])->middleware('guest'); 
+Route::post('register', [RegisterController::class, 'store'])->middleware('guest'); 
+
+Route::post('logout', [SessionsController::class, 'destroy'])->middleware('guest'); 
+
+// Route::get('login', [SessionsController::class, 'create'])->middleware('guest');
+// Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
