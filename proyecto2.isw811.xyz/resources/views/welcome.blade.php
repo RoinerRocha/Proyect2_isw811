@@ -109,6 +109,7 @@
       
       
       <ul class="navbar-nav2 ml-auto">
+        @if (Route::has('login'))
           <div>
             @auth
               <span class="text-name">Bienvenido, {{ auth()->user()->name }}!</span>
@@ -118,10 +119,13 @@
                   <button type="submit">Log Out</button>
               </form>
             @else
-              <a href="/login" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-              <a href="/register" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+              <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+              @if (Route::has('register'))
+                <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+              @endif
             @endauth
           </div>
+        @endif  
       </ul>
     </div>
   </nav>
@@ -175,5 +179,4 @@
       </div>
     </div>
   </div>
-  <x-flash />
 </body>

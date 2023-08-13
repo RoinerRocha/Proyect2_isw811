@@ -295,6 +295,12 @@ html {
     justify-content: center;
     margin-top: 10px;
   }
+  .QR {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center; 
+  }
   
   
   @media (min-width: 992px) {

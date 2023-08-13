@@ -24,38 +24,20 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-					<form method="POST" action="{{ route('login') }}">
-						@csrf
+					<form method="POST" action="{{ route('2fa') }}">
+                        {{ csrf_field() }}
 						<div class="input-group mb-3">
+                        <p>Please enter the  <strong>OTP</strong> generated on your Authenticator App. <br> Ensure you submit the current one because it refreshes every 30 seconds.</p>
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input id="email" type="email" class="form-control input_user @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="email" required autocomplete="email" autofocus>
-							@error('email')
-                        		<p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-                    		@enderror
-						</div>
-						<div class="input-group mb-2">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-key"></i></span>
-							</div>
-							<input id="password" type="password" class="form-control input_pass @error('password') is-invalid @enderror" name="password" placeholder="password" require>
-							@error('password')
-                        		<p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-                    		@enderror
-						</div>
-						<div class="form-group">
-							<div class="custom-control custom-checkbox">
-								<input type="checkbox" class="custom-control-input" id="customControlInline">
-								<label class="custom-control-label" for="customControlInline">Remember me</label>
-							</div>
+							<input id="one_time_password" type="number" class="form-control" name="one_time_password" placeholder="Insert One Time Password" required autofocus>
 						</div>
 						<div class="d-flex justify-content-center mt-3 login_container">
-				 			<button type="submit" name="button" class="btn login_btn">Login</button>
+				 			<button type="submit" class="btn login_btn">Login</button>
 				   		</div>
 					</form>
 				</div>
-		
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links">
 						Don't have an account? <a href="/register" class="ml-2 link">Sign Up</a>
