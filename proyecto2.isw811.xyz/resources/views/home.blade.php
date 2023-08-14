@@ -27,7 +27,7 @@
               <div class="dropdown_content">
                   <ul class="dropdown_sub">
                       <li class="dropdown_li">
-                        <a href="#" class="dropdown_anchor">twitter</a>
+                        <a href="{{route('LoginTwitter')}}" class="dropdown_anchor">twitter</a>
                       </li>
                       <li class="dropdown_li">
                         <a href="#" class="dropdown_anchor">LinkedIn</a>

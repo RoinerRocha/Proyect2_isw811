@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TwitterController;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -25,6 +26,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+
+Route::get('/twitter', 'App\Http\Controllers\TwitterController@connect_Twitter')->name('media_twitter');
+Route::get('/callback', 'App\Http\Controllers\TwitterController@twitter_cbk')->name('media_cbk');
+Route::get('/LoginTwitter', 'App\Http\Controllers\TwitterController@index')->name('LoginTwitter');
 
 Route::middleware(['2fa'])->group(function () {
    
