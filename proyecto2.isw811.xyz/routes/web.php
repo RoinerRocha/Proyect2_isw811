@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TwitterController;
+use App\Http\Controllers\LinkedInController;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -31,6 +32,14 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/twitter', 'App\Http\Controllers\TwitterController@connect_Twitter')->name('media_twitter');
 Route::get('/callback', 'App\Http\Controllers\TwitterController@twitter_cbk')->name('media_cbk');
 Route::get('/LoginTwitter', 'App\Http\Controllers\TwitterController@index')->name('LoginTwitter');
+
+Route::get('/PostTweet', 'App\Http\Controllers\TwitterController@PostTweet')->name('PostTweet');
+Route::post('/Post', 'App\Http\Controllers\TwitterController@twitter_post')->name('media_twitter_post');
+
+
+Route::get('/linkedin', 'App\Http\Controllers\LinkedInController@LoginLI')->name('LinkedInLoginView');
+Route::get('/linkedin/login', 'App\Http\Controllers\LinkedInController@provider')->name('LinkedInLogin');
+Route::get('/linkedin/callback', 'App\Http\Controllers\LinkedInController@ProviderCallback')->name('LinkedI_cbk');
 
 Route::middleware(['2fa'])->group(function () {
    

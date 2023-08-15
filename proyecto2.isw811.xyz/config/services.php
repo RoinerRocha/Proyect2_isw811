@@ -29,9 +29,10 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
-    'LinkedIn' => [
+    'linkedin' => [
         'client_id' => env('LinkedIn_CLIENT_ID'),
         'client_secret' => env('LinkedIn_CLIENT_SECRET'),
+        'acces_token' => env('LinkedIn_ACCES_TOKEN'),
         'redirect' => env('LinkedIn_REDIRECT_URL'),
     ],
     'Twitter' => [
