@@ -24,7 +24,7 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-					<form method="POST" action="{{ route('login') }}">
+					<form method="POST" action="{{ route('LinkedInLogin') }}">
 					<h3 class="register-heading">click on the following button to connect to your <strong> LinkedIn  account</strong></h3>
 						<div class="d-flex justify-content-center mt-3 login_container">
 				 			<a href="{{route('LinkedInLogin')}}" class="btn login_btn">Login LinkedIn</a>

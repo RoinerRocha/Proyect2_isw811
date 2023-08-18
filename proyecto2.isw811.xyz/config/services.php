@@ -32,7 +32,6 @@ return [
     'linkedin' => [
         'client_id' => env('LinkedIn_CLIENT_ID'),
         'client_secret' => env('LinkedIn_CLIENT_SECRET'),
-        'acces_token' => env('LinkedIn_ACCES_TOKEN'),
         'redirect' => env('LinkedIn_REDIRECT_URL'),
     ],
     'Twitter' => [

@@ -41,6 +41,9 @@ Route::get('/linkedin', 'App\Http\Controllers\LinkedInController@LoginLI')->name
 Route::get('/linkedin/login', 'App\Http\Controllers\LinkedInController@provider')->name('LinkedInLogin');
 Route::get('/linkedin/callback', 'App\Http\Controllers\LinkedInController@ProviderCallback')->name('LinkedI_cbk');
 
+Route::get('/post', 'App\Http\Controllers\LinkedInController@postview')->name('LinkedIn');
+Route::post('/linkedin/post', 'App\Http\Controllers\LinkedInController@PostLinkedin')->name('LinkedInPost');
+
 Route::middleware(['2fa'])->group(function () {
    
     Route::get('/home', [HomeController::class, 'index'])->name('home');
