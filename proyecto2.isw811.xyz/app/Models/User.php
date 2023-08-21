@@ -46,14 +46,14 @@ class User extends Authenticatable
     ];
 
     protected function google2faSecret()
-{
-    return new Attribute(array(
-        'get' => function ($value) {
-            return decrypt($value);
-        },
-        'set' => function ($value) {
-            return encrypt($value);
-        }
-    ));
-}
+    {
+        return new Attribute(array(
+            'get' => function ($value) {
+                return decrypt($value);
+            },
+            'set' => function ($value) {
+                return encrypt($value);
+            }
+        ));
+    }
 }
