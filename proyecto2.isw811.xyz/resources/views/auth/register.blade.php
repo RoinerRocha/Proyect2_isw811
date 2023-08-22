@@ -18,7 +18,7 @@
                 <div class="col-md-3 register-left">
                     <img src="assets/images/Liu_Kang.png" alt=""/>
                     <h3>Welcome</h3>
-                    <input href="{{ route('login') }}" type="submit" name="" value="Login"/><br/>
+                    <input href="{{ route('home') }}" type="submit" name="" value="Login"/><br/>
                 </div>
                 <div class="col-md-9 register-right">
                     <div class="tab-content" id="myTabContent">

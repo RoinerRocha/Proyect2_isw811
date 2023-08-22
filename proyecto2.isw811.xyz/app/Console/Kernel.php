@@ -13,9 +13,13 @@ class Kernel extends ConsoleKernel
      * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
      * @return void
      */
+    protected function scheduleTimezone()
+    {
+        return 'America/Costa_Rica';
+    }
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->command('tweet:send');
     }
 
     /**

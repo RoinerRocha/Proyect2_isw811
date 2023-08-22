@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TwitterController;
+use App\Http\Controllers\ScheduledTweet;
 use App\Http\Controllers\LinkedInController;
 use Illuminate\Support\Facades\Auth;
 
@@ -35,6 +36,14 @@ Route::get('/LoginTwitter', 'App\Http\Controllers\TwitterController@index')->nam
 
 Route::get('/PostTweet', 'App\Http\Controllers\TwitterController@PostTweet')->name('PostTweet');
 Route::post('/Post', 'App\Http\Controllers\TwitterController@twitter_post')->name('media_twitter_post');
+
+Route::get('/ScheduledLogin', 'App\Http\Controllers\ScheduledTweet@Login')->name('NewLogin');
+Route::get('/auth', 'App\Http\Controllers\ScheduledTweet@connect_Twitter')->name('auth');
+Route::get('/callback', 'App\Http\Controllers\ScheduledTweet@twitter_cbk')->name('callback');
+
+Route::get('/Schedule', 'App\Http\Controllers\ScheduledTweet@ScheduledPost')->name('ScheduledPost');
+Route::post('/postSchedule', 'App\Http\Controllers\ScheduledTweet@scheduleTweet')->name('scheduleTweet');
+
 
 
 Route::get('/linkedin', 'App\Http\Controllers\LinkedInController@LoginLI')->name('LinkedInLoginView');

@@ -10,8 +10,19 @@
     <title>Registration Page</title>
 	<link rel="stylesheet" type="text/css" href="assets/register.css">
 </head>
+<?php
+        $month = date('m');
+        $day = date('d');
+        $year = date('Y');
+        
+        $today = $year . '-' . $month . '-' . $day;
+        $hour = date('H:i:s', strtotime($today));
+        $todaytoday = $today . 'T' . $hour;
+
+
+    ?>
 <body>
-    <form method="POST" action="{{ route('media_twitter_post') }}" class="container register">
+    <form method="POST" action="{{ route('scheduleTweet') }}" class="container register">
         @csrf
         <div>
             <div class="row">
@@ -28,6 +39,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input id="message" type="text" class="form-control @error('message') is-invalid @enderror"  name="message"  value="{{ old('message') }}" placeholder="message *" required autocomplete="message" autofocus />
+                                        <input type="datetime-local" id="schedule-time" name="schedule-time" min="<?php echo $todaytoday; ?>" required><br>
                                     </div>
                                 </div>
                                 <div class="col-md-6">

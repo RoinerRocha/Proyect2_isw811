@@ -15,6 +15,11 @@
         @csrf
         <div>
             <div class="row">
+                <div class="col-md-3 register-left">
+                    <img src="assets/images/Linkedin.png" alt=""/>
+                    <h3>Welcome</h3>
+                    <input href="{{ route('home') }}" type="submit" name="" value="Login"/><br/>
+                </div>
                 <div class="col-md-9 register-right">
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
