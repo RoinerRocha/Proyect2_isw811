@@ -23,7 +23,7 @@ class ScheduledTweet extends Controller
         return view('Twitter.SchedulePost');
     }
 
-    public function connect_Twitter(Request $request)
+    public function schedule_connect_Twitter(Request $request)
     {
         $CONSUMER_KEY = env("Twitter_API_KEY");
         $REDIRECT_URL = env("Twitter_REDIRECT_URL");
@@ -37,7 +37,7 @@ class ScheduledTweet extends Controller
         return redirect($_route);
     }
 
-    public function twitter_cbk(Request $request){
+    public function schedule_twitter_cbk(Request $request){
 
         $CONSUMER_KEY = env("Twitter_API_KEY");
         $REDIRECT_URL = env("Twitter_REDIRECT_URL");
@@ -74,7 +74,8 @@ class ScheduledTweet extends Controller
 
     public function scheduleTweet(Request $request)
     {
-        $twitter = TwitterPosts::query()->first();
+        $user_id = request()->user()->id;
+        $twitter = TwitterPosts::query()->where('user_id', $user_id)->first();
         $oauth_token = $twitter->user_access_token;
         $oauth_secret = $twitter->twitter_secret;
         $tweetContent = $request->input('message');

@@ -112,7 +112,8 @@ class LinkedInController extends Controller
 
     public function PostLinkedin(Request $request)
     {
-        $data = LinkedInData::query()->first();
+        $user_id = request()->user()->id;
+        $data = LinkedInData::query()->where('user_id', $user_id)->first();
         $token = $data->user_access_token;
         // $token = env('TOKEN');
         $code = $data->user_code;

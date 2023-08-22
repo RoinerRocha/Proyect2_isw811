@@ -74,7 +74,8 @@ class TwitterController extends Controller
 
     public function twitter_post(Request $request)
     {
-        $twitter = TwitterPosts::query()->first();
+        $user_id = request()->user()->id;
+        $twitter = TwitterPosts::query()->where('user_id', $user_id)->first();
         $message = $request->input('message');
         $save = Twitter::query()->updateOrCreate([
             'user_id' => request()->user()->id,

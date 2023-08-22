@@ -29,7 +29,7 @@
 					<h3 class="register-heading">click on the following button to connect to your <strong> twitter  account</strong></h3>
 						<div class="d-flex justify-content-center mt-3 login_container">
 							
-				 			<a href="{{route('media_twitter')}}" class="btn login_btn">Login Twitter</a>
+				 			<a href="{{route('auth')}}" class="btn login_btn">Login Twitter</a>
 				   		</div>
 					</form>
 				</div>

@@ -38,8 +38,8 @@ Route::get('/PostTweet', 'App\Http\Controllers\TwitterController@PostTweet')->na
 Route::post('/Post', 'App\Http\Controllers\TwitterController@twitter_post')->name('media_twitter_post');
 
 Route::get('/ScheduledLogin', 'App\Http\Controllers\ScheduledTweet@Login')->name('NewLogin');
-Route::get('/auth', 'App\Http\Controllers\ScheduledTweet@connect_Twitter')->name('auth');
-Route::get('/callback', 'App\Http\Controllers\ScheduledTweet@twitter_cbk')->name('callback');
+// Route::get('/auth', 'App\Http\Controllers\ScheduledTweet@schedule_connect_Twitter')->name('auth');
+// Route::get('/callback', 'App\Http\Controllers\ScheduledTweet@schedule_twitter_cbk')->name('callback');
 
 Route::get('/Schedule', 'App\Http\Controllers\ScheduledTweet@ScheduledPost')->name('ScheduledPost');
 Route::post('/postSchedule', 'App\Http\Controllers\ScheduledTweet@scheduleTweet')->name('scheduleTweet');
